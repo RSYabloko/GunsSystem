@@ -1,0 +1,138 @@
+// -*- mode: jsonc -*-
+{
+	"output":"VGA-1",
+	"height": 40,
+	"width": 1400,
+	"margin-top": 0,
+
+	"modules-left": [ "custom/menu", "hyprland/workspaces","custom/balance"],
+	"modules-center": ["clock","custom/weather" ],
+	"modules-right": ["custom/music", "hyprland/language", "pulseaudio", "cpu", "memory"],
+
+
+	"custom/menu": {
+		"format": "{icon}",
+		"format-icons": "i use 󰣇  btw",
+		"on-click": "wofi",
+		"escape": true,
+		"tooltip": false
+	},
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "7",
+			"8": "",
+			"9": "󰠮"
+			},
+		"tooltip": false
+	},
+
+	"custom/balance": {
+		"exec": "~/.config/waybar/script/total_balance.py",
+		"interval":1,
+		"return-type": "json",
+		"on-click": "~/.config/waybar/script/total_balance.py click=right"
+	},
+
+	  "custom/weather": {
+        	"format": "{}",
+        	"tooltip": true,
+	        "interval": 1800,
+	        "exec": ".config/waybar/wttr.py",
+	        "return-type": "json"
+	},
+
+
+
+	"hyprland/language": {
+		"format": "<span color='#fab387'>󰌏 </span> {}",
+		"format-en": "EN",
+		"format-ru": "RU"
+	},
+
+"custom/music": {
+    "exec": "~/.config/waybar/YM.sh",
+    "interval": 0,
+    "signal": 10,
+    "format": "<span color='#fab387'>{icon}</span> {text} %",
+    "format-icons": [" ", " ", " "],
+    "on-scroll-up": "~/.config/waybar/volume.sh +2%",
+    "on-scroll-down": "~/.config/waybar/volume.sh -2%",
+    "tooltip": false
+},
+    
+	"pulseaudio": {
+		"scroll-step": 2,
+		"format": "<span color='#fab387'>{icon}</span> {volume}%",
+		"format-icons": {
+		"default": ["  ", "  ","  "]},
+		"on-click": "pavucontrol",
+		"on-click-right": "~/.config/waybar/audio.sh",
+		"tooltip": false
+	},
+
+ "clock": {
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    },
+    "format": "  {:%a %d %b |   %I:%M:%S %p}", //12 hour format
+    // "format": " {:%d %m %Y  %H:%M}",	//24 hour format
+    "format-alt": "  {:%d/%m/%Y |   %H:%M:%S}",
+    // //"timezones": [ "Kolkata" ],
+    // //"max-length": 200
+    "interval": 1
+  },
+
+	"cpu": {
+        	"interval": 2,
+	        "format": "   {usage}%",
+		"on-click": "alacritty -e htop"
+    },
+
+	"memory":{ 
+		 "interval": 3,
+	         "format": "   {used}",
+                 "tooltip-format": "{used}GiB used of {total}GiB ({percentage}%)"
+	    },
+
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+		},
+
+
+	"escape": true,
+	"exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+	}
+}

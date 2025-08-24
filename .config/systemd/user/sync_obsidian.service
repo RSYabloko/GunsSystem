@@ -1,0 +1,11 @@
+[Unit]
+Description=sync file obsidian on my server
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/Naga.config/systemd/user/sync_obsidian.sh
+Restart-on=failure
+
+[Install]
+WantedBy=default.target
