@@ -94,10 +94,5 @@
       "format": ""
     },
 
-    {
-      "type": "custom",
-      "format": "\n   \u001b[35m⏳Not Today\n    \u001b[0m├─ \u001b[33mЗапомни, а то забудешь\u001b[0m\n    │  ├─ Powered by Linux🐧, fueled by freedom✌️\n    │  ├─ Eat, sleep, trade, code, repeat\n    \u001b[0m│  ├─ \u001b[34mТвори \u001b[33mкод\u001b[0m, а не добро🪬\n    │  └─ ACAB - All cats a beautiful\n    │ \n    \u001b[0m└─ Im есть грунт \u001b[90m#Типо рофл(Но это не точно)\u001b[0m\n       ├─ Money      - \u001b[31mNot found\u001b[0m\n       ├─ \u001b[34mHappy      - \u001b[32mFound\u001b[0m\n       ├─ \u001b[34mCompassion - \u001b[31mNot found\u001b[0m\n       ├─ Kind       - \u001b[32mFound\u001b[0m\n       ├─ ГKZўEЯлЋВ  - \u001b[31mError\u001b[0m\n       ├─ Modest     - \u001b[31mError\u001b[0m\n       ├─ Fair       - \u001b[32mFound\u001b[0m\n       └─ ��Jѡk      - \u001b[31mError\n"
-    }
-
   ]
 }
