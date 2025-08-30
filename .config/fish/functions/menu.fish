@@ -18,10 +18,13 @@ function menu
             # Подменю для системы
             set sys_choice (gum choose \
                 "Global update" \
+                "Clear cache(pacman & yay)"\
                 "Back")
             switch $sys_choice
-                case "Globla update"
+                case "Global update"
                     sudo pacman -Syy && sudo pacman -Syu && yay -Syu
+                case "Clear cache(pacman & yay)"
+                    yay -Sc
                 case "Back"
                     menu
             end
